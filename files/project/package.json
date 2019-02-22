@@ -1,0 +1,24 @@
+{
+  "name": "collabthings-docker",
+  "productName": "CollabThings API docker",
+  "repository": "git@github.com:ssbc/patchwork.git",
+  "version": "0.0.1",
+  "description": "Collabthings API docker.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "node dist/test/tests.js",
+    "check-locales": "node scripts/check-locales.js",
+    "postinstall": "npm run rebuild",
+    "rebuild": "npm rebuild",
+    "build": "tsc; cp *.json ./dist/",
+    "buildtest": "tsc; npm run test"
+  },
+  "author": "Collabthings",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "collabthings-api": "file:/opt/collabthings-api",
+    "typescript": "^3.3.3"
+  },
+  "devDependencies": {}
+}
