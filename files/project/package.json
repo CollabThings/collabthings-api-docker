@@ -18,7 +18,9 @@
   "license": "AGPL-3.0",
   "dependencies": {
     "collabthings-api": "file:/opt/collabthings-api",
-    "typescript": "^3.3.3"
+    "typescript": "^3.3.3",
+    "ssb-client": "^4.6.3",
+    "ssb-server": "^14.0.4"
   },
   "devDependencies": {}
 }

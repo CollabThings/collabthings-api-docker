@@ -11,12 +11,11 @@ cd /opt/project
 #echo npm install
 #npm install
 
-export 
 ssb-server start &
 sleep 5
 
-echo "**** IFPS PEERS ********"
-ipfs swarm peers
+#echo "**** IFPS PEERS ********"
+#ipfs swarm peers
 
 
 echo "***** RUN API **********"
