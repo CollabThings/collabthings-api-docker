@@ -14,7 +14,7 @@ yes | rm -r tmp
 
 mkdir -p tmp/collabthings-api
 if [ -d ../collabthings-api ]; then
-	rsync -avz --exclude 'node_modules' --exclude '.git' --exclude 'testenv' ../collabthings-api tmp/
+	rsync -avz --exclude 'node_modules' --exclude '.git' --exclude 'testenv' --exclude "package-lock.json" ../collabthings-api tmp/
 else
 	echo getting collabthings-api with git
 	cd tmp && git clone https://github.com/CollabThings/collabthings-api.git

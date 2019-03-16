@@ -63,3 +63,4 @@ typings/
 /.settings/
 
 *.tar.gz
+/buildandrun.sh~

@@ -5,20 +5,19 @@ RUN ls /opt
 
 ENV PATH="./node_modules/.bin:/opt/go-ipfs:${PATH}"
 
-WORKDIR /opt/project
-#RUN npm install typescript
-RUN yarn add typescript
-#RUN npm install ssb-server
-RUN yarn add ssb-server
+RUN npm install -g pnpm
 
-ADD files/project/ /opt/project
 ADD tmp/collabthings-api/ /opt/collabthings-api
 
-RUN cd /opt/collabthings-api && yarn
-#npm install
-RUN npm install /opt/collabthings-api
-#RUN npm install
-RUN yarn
+ADD files/project/ /opt/project
+WORKDIR /opt/project
+RUN ls 
+RUN pnpm install
+
+RUN cd /opt/collabthings-api && pnpm install
+
+RUN pnpm install /opt/collabthings-api
+RUN pnpm install
 RUN tsc
 
 ADD files/run-ipfs.sh /opt/run-ipfs.sh
