@@ -7,11 +7,15 @@ ENV PATH="./node_modules/.bin:/opt/go-ipfs:${PATH}"
 
 RUN npm install -g pnpm
 
+# just to make building faster. downloading most of the packages in advance
+ADD collabthings-api-package.json /opt/collabthings-api/package.json
+RUN cd /opt/collabthings-api && pnpm install
+
 ADD tmp/collabthings-api/ /opt/collabthings-api
 
 ADD files/project/ /opt/project
 WORKDIR /opt/project
-RUN ls 
+
 RUN pnpm install
 
 RUN cd /opt/collabthings-api && pnpm install

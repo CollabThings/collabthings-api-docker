@@ -10,6 +10,8 @@ if [ ! -f files/ipfs.tgz ]; then
 	curl https://dist.ipfs.io/go-ipfs/v0.4.18/go-ipfs_v0.4.18_linux-amd64.tar.gz -o files/ipfs.tgz
 fi
 
+cp -uv ../collabthings-api/package.json collabthings-api-package.json
+ 
 yes | rm -r tmp
 
 mkdir -p tmp/collabthings-api

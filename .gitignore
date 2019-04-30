@@ -65,3 +65,4 @@ typings/
 *.tar.gz
 *.*~
 
+/collabthings-api-package.json
